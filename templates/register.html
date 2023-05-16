@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #333;
+        }
+
+        label {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 20px;
+            background-color: #4caf50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Реєстрація</h1>
+
+    <form method="post" action="/register">
+        <label for="name">Введіть, будь ласка, своє ім'я:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="surname">Введіть своє прізвище:</label>
+        <input type="text" id="surname" name="surname" required>
+
+        <label for="email">Введіть свій емейл:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Введіть свій номер телефону:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="password">Введіть свій пароль:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm-password">Введіть пароль ще раз:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+
+        <input class="button" type="submit" value="Зареєструватися" style="display: block; margin: 0 auto;">
+    </form>
+
+</body>
+</html>

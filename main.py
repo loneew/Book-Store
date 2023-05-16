@@ -1,8 +1,8 @@
-from bscfuncions import *
+from controller import launch
 
 
 def main():
-    p1_0()
+    launch()
 
 
 if __name__ == "__main__":

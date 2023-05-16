@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Замовлення</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f9f9f9;
+            font-weight: bold;
+        }
+
+        .question {
+            margin-top: 50px;
+            font-size: 24px;
+        }
+
+        .input-field {
+            margin-top: 20px;
+        }
+
+        .button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 12px;
+            font-size: 18px;
+            background-color: #4caf50;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Каталог книжок</h1>
+
+    {% if books %}
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Назва</th>
+                <th>Автор</th>
+                <th>Країна автора</th>
+                <th>Статус</th>
+                <th>Ключові слова</th>
+                <th>Кількість сторінок</th>
+            </tr>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author_name }}</td>
+                <td>{{ book.author_nationality }}</td>
+                <td>{{ book.status }}</td>
+                <td>{{ book.key_words }}</td>
+                <td>{{ book.amount_of_pages }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p class="empty-message">Схоже, таких книжок немає.</p>
+    {% endif %}
+
+    <div class="question">
+        <p>Яку книжку бажаєте взяти почитати?</p>
+    </div>
+    <form method="post" action="/profile/order">
+        <div class="input-field">
+            <input type="number" id="id" name="id" required>
+        </div>
+        <button class="button" type="submit">Взяти книжку</button>
+    </form>
+</body>
+</html>
